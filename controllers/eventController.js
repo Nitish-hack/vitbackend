@@ -5,7 +5,7 @@ module.exports.addEvent = async (req, res) => {
  try {
     const { title, description, date, location, category, organizer,  technologies} = req.body;
   const imageurl=req.file.path;
-const image='http://localhost:5000/'+imageurl;
+const image=process.env.BASE_URL+imageurl;
     // Create a new event object
     const newEvent = new Event({
       title,
